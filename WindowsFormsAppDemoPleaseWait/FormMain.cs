@@ -23,7 +23,9 @@ namespace WindowsFormsAppDemoPleaseWait
       int backupPositionX = Location.X;
       int backupPositionY = Location.Y + Size.Height / 2;
       var waitWindow = new WaitWindow(backupPositionX, backupPositionY);
+#if !DEBUG
       waitWindow.Show();
+#endif
       Application.DoEvents();
       Thread.Sleep(5000);
       waitWindow.Close();
